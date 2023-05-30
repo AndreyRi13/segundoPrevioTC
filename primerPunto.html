@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Máquina de Moore</title>
+  <style>
+    .input {
+      margin-bottom: 10px;
+    }
+    .output {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Primer punto - Máquina de Moore</h2>  
+  <!-- Explicación -->
+  <div>
+    <h2>Explicación:</h2>
+    <p>La máquina de Moore es un tipo de autómata finito determinista que produce una salida en función de su estado actual y la entrada recibida. En este caso, la máquina de Moore está diseñada para buscar la secuencia "01" en cualquier cadena binaria de entrada.</p>
+    <p>La máquina consta de tres estados:</p>
+    <ul>
+      <li>q0: Estado inicial</li>
+      <li>q1: Estado intermedio</li>
+      <li>q2: Estado final</li>
+    </ul>
+    <p>El proceso de procesamiento de entrada de la máquina ocurre de la siguiente manera:</p>
+    <ol>
+      <li>El estado inicial es q0.</li>
+      <li>Si el caracter de entrada es '0', la máquina pasa al estado q1.</li>
+      <li>Si el caracter de entrada es '1', la máquina pasa al estado q2 y se imprime 'a' en la salida.</li>
+      <li>Si el caracter de entrada es distinto de '0' o '1', la máquina vuelve al estado q0.</li>
+      <li>Si la máquina está en el estado q2 y recibe un '0', vuelve al estado q1.</li>
+      <li>Si la máquina está en el estado q1 y recibe un '1', vuelve al estado q2.</li>
+    </ol>
+  </div>
+  <div>
+    <label for="input">Entrada binaria:</label>
+    <input type="text" id="input" class="input" placeholder="Ingresa una cadena binaria">
+    <button onclick="runMachine()">Ejecutar</button>
+  </div>
+  <div>
+    <label for="output">Salida:</label>
+    <p id="output" class="output"></p>
+  </div>
+  <script src="./js/primerPunto.js"></script>
+</body>
+</html>
